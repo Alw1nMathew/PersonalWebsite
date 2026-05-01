@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alwin Mathew — Designer & Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Custom cursor ── -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ── Navigation ── -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">Alwin<span class="logo-dot">.</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ── Mobile menu ── -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#home"     class="mobile-link" onclick="closeMobileMenu()">Home</a>
+    <a href="#about"    class="mobile-link" onclick="closeMobileMenu()">About</a>
+    <a href="#projects" class="mobile-link" onclick="closeMobileMenu()">Projects</a>
+    <a href="#contact"  class="mobile-link" onclick="closeMobileMenu()">Contact</a>
+  </div>
+
+  <!-- ── Scroll timeline thread ── -->
+  <div id="timeline-thread" aria-hidden="true">
+    <div class="thread-track"></div>
+    <div class="thread-fill" id="thread-fill"></div>
+    <div class="thread-dot" id="dot-home"     data-label="Home"></div>
+    <div class="thread-dot" id="dot-about"    data-label="About"></div>
+    <div class="thread-dot" id="dot-projects" data-label="Projects"></div>
+    <div class="thread-dot" id="dot-contact"  data-label="Contact"></div>
+  </div>
+
+  <!-- ════════════════════════════════
+       SECTION 01 — HOME
+  ════════════════════════════════ -->
+  <section id="home">
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="home-content">
+      <p class="eyebrow reveal">NYU Abu Dhabi — Communications Lab</p>
+
+      <h1 class="home-name reveal">
+        Alwin<br>Mathew.
+      </h1>
+
+      <p class="home-role reveal">Designer &amp; Developer</p>
+
+      <p class="home-desc reveal">
+        Building digital experiences at the intersection of
+        design thinking and technical craft.
+      </p>
+
+      <div class="home-btns reveal">
+        <a href="#projects" class="btn-primary">View Work</a>
+        <a href="#contact"  class="btn-outline">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       SECTION 02 — ABOUT
+  ════════════════════════════════ -->
+  <section id="about">
+    <div class="section-inner">
+
+      <p class="section-eyebrow reveal">02 — About Me</p>
+      <h2 class="section-title reveal">Hi, I'm Alwin.</h2>
+
+      <div class="about-grid">
+
+        <!-- Photo -->
+        <div class="about-photo-wrap reveal-left">
+          <div class="about-photo">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <circle cx="22" cy="15" r="8" stroke="#C9A84C" stroke-width="1"/>
+              <path d="M6 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#C9A84C" stroke-width="1"/>
+            </svg>
+            <span class="photo-label">Your photo here</span>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="about-text">
+          <p class="about-bio reveal">
+            I'm a student at <strong>NYU Abu Dhabi</strong> studying Interactive Media,
+            passionate about creating digital experiences that live at the intersection
+            of <strong>design thinking</strong> and <strong>technical craft</strong>.
+            I believe the best interfaces feel inevitable — effortless to use,
+            impossible to forget.
+          </p>
+          <p class="about-bio reveal" style="transition-delay: 0.12s">
+            My Comm Lab projects explore this idea across different mediums —
+            from interactive visuals to web narratives. Each one is a small
+            experiment in how small interactions compound into big emotional responses.
+          </p>
+
+          <p class="skills-label reveal" style="transition-delay: 0.2s">Skills &amp; Tools</p>
+          <div class="skills-grid reveal" style="transition-delay: 0.25s">
+            <span class="skill-chip">HTML</span>
+            <span class="skill-chip">CSS</span>
+            <span class="skill-chip">JavaScript</span>
+            <span class="skill-chip">React</span>
+            <span class="skill-chip">Figma</span>
+            <span class="skill-chip">p5.js</span>
+            <span class="skill-chip">Node.js</span>
+            <span class="skill-chip">UI / UX</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       SECTION 03 — PROJECTS
+  ════════════════════════════════ -->
+  <section id="projects">
+    <div class="section-inner">
+
+      <p class="section-eyebrow reveal">03 — Projects</p>
+      <h2 class="section-title reveal">Comm Lab Work.</h2>
+
+      <div class="projects-grid">
+
+        <!-- Card 1 -->
+        <a href="#" class="project-card reveal" style="transition-delay: 0.05s">
+          <span class="card-badge">Assignment 01</span>
+          <div class="project-thumb">
+            <div class="thumb-inner">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <rect x="6" y="6" width="28" height="28" rx="2" stroke="#C9A84C" stroke-width="0.8"/>
+                <path d="M13 20h14M20 13v14" stroke="#C9A84C" stroke-width="0.8"/>
+              </svg>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="project-title">Assignment 1 Title</h3>
+            <p class="project-desc">
+              Replace this with a short description of your first Comm Lab assignment.
+              What did you make? What did you explore?
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="#" class="project-card reveal" style="transition-delay: 0.1s">
+          <span class="card-badge">Assignment 02</span>
+          <div class="project-thumb">
+            <div class="thumb-inner">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <circle cx="20" cy="20" r="12" stroke="#C9A84C" stroke-width="0.8"/>
+                <path d="M20 8v24M8 20h24" stroke="#C9A84C" stroke-width="0.8"/>
+              </svg>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="project-title">Assignment 2 Title</h3>
+            <p class="project-desc">
+              Replace this with a short description of your second Comm Lab assignment.
+              What did you make? What did you explore?
+            </p>
+            <div class="project-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">p5.js</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="#" class="project-card reveal" style="transition-delay: 0.15s">
+          <span class="card-badge">Assignment 03</span>
+          <div class="project-thumb">
+            <div class="thumb-inner">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <polygon points="20,6 36,34 4,34" stroke="#C9A84C" stroke-width="0.8" fill="none"/>
+              </svg>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="project-title">Assignment 3 Title</h3>
+            <p class="project-desc">
+              Replace this with a short description of your third Comm Lab assignment.
+              What did you make? What did you explore?
+            </p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">CSS</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a href="#" class="project-card reveal" style="transition-delay: 0.2s">
+          <span class="card-badge">Assignment 04</span>
+          <div class="project-thumb">
+            <div class="thumb-inner">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                <rect x="8" y="18" width="24" height="16" rx="1" stroke="#C9A84C" stroke-width="0.8"/>
+                <path d="M15 18v-4a5 5 0 0 1 10 0v4" stroke="#C9A84C" stroke-width="0.8"/>
+              </svg>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="project-title">Assignment 4 Title</h3>
+            <p class="project-desc">
+              Replace this with a short description of your fourth Comm Lab assignment.
+              What did you make? What did you explore?
+            </p>
+            <div class="project-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">API</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       SECTION 04 — CONTACT
+  ════════════════════════════════ -->
+  <section id="contact">
+    <div class="section-inner">
+
+      <p class="section-eyebrow reveal">04 — Contact</p>
+      <h2 class="section-title reveal">Let's Talk.</h2>
+
+      <div class="contact-grid">
+
+        <!-- Form -->
+        <form class="contact-form reveal" id="contact-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-field">
+            <label class="form-label" for="name">Your name</label>
+            <input class="form-input" id="name" type="text" placeholder="Alwin Mathew" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="email">Email address</label>
+            <input class="form-input" id="email" type="email" placeholder="hello@example.com" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-textarea" id="message" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send Message</button>
+          <p class="form-success" id="form-success">Message sent — I'll be in touch soon.</p>
+        </form>
+
+        <!-- Info -->
+        <div class="contact-info reveal" style="transition-delay: 0.15s">
+          <p class="info-label">Direct email</p>
+          <a href="mailto:aim9145@nyu.edu" class="contact-email">aim9145@nyu.edu</a>
+
+          <p class="info-label">Find me on</p>
+          <div class="socials-grid">
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">GitHub</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">WhatsApp</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <p class="footer-copy">© 2025 <span>Alwin Mathew</span> — NYU Abu Dhabi</p>
+    <p class="footer-copy">Communications Lab</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
