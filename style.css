@@ -252,7 +252,45 @@ img, svg { display: block; }
 .thread-dot.active::after { color: var(--gold); }
 
 /* =============================================
-   SCROLL REVEAL
+   HOME SECTION — CSS keyframe auto-animations
+   (no JS needed, fires on page load)
+============================================= */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Every .home-content child animates in automatically */
+.home-content .eyebrow {
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.2s;
+}
+.home-content .home-name {
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.38s;
+}
+.home-content .home-role {
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.52s;
+}
+.home-content .home-desc {
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.64s;
+}
+.home-content .home-btns {
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.76s;
+}
+
+/* Remove the reveal class behaviour inside home */
+#home .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* =============================================
+   SCROLL REVEAL  (for About / Projects / Contact)
 ============================================= */
 .reveal {
   opacity: 0;
@@ -706,14 +744,41 @@ section { min-height: 100vh; position: relative; }
   resize: vertical;
 }
 
-.form-success {
-  font-size: 0.82rem;
+.form-success,
+[data-fs-success] {
+  font-size: 0.85rem;
   color: var(--gold);
+  padding: 0.7rem 1rem;
+  border: 0.5px solid rgba(201, 168, 76, 0.4);
+  background: rgba(201, 168, 76, 0.06);
   display: none;
-  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
-.form-success.show { display: block; }
+.form-error,
+[data-fs-error]:not(:empty) {
+  font-size: 0.78rem;
+  color: #e87070;
+  margin-top: 0.2rem;
+  display: block;
+}
+
+/* Formspree shows [data-fs-success] and [data-fs-error] when needed */
+[data-fs-success]:not(:empty),
+[data-fs-error]:not(:empty) { display: block; }
+
+.field-error {
+  font-size: 0.75rem;
+  color: #e87070;
+  min-height: 1rem;
+  display: block;
+}
+
+/* Input invalid state (set by data-fs-field) */
+.form-input[aria-invalid="true"],
+.form-textarea[aria-invalid="true"] {
+  border-color: #e87070;
+}
 
 .contact-info { padding-top: 0.25rem; }
 
