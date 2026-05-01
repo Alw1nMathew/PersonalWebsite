@@ -1,5 +1,5 @@
 /* =============================================
-   ALWIN MATHEW — main.js
+   ALWIN MATHEW — script.js
    All interactive behaviour
 ============================================= */
 
