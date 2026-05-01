@@ -1,5 +1,5 @@
 /* =============================================
-   ALWIN MATHEW — script.js
+   ALWIN MATHEW — main.js
    All interactive behaviour
 ============================================= */
 
@@ -73,39 +73,46 @@ function closeMobileMenu() {
 
 
 /* ─────────────────────────────────────────────
-   SCROLL REVEAL
+   SCROLL REVEAL  (About / Projects / Contact only)
 ───────────────────────────────────────────── */
 (function () {
-  var targets = document.querySelectorAll('.reveal, .reveal-left');
+  // Only target reveals OUTSIDE the home section
+  var targets = document.querySelectorAll('#about .reveal, #about .reveal-left, #projects .reveal, #projects .reveal-left, #contact .reveal, #contact .reveal-left');
   if (!targets.length) return;
 
-  // Trigger elements already in view on load
-  function checkEl(el) {
-    var rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.9) {
-      el.classList.add('visible');
-    }
+  function showEl(el) {
+    el.classList.add('visible');
   }
 
-  // Use IntersectionObserver if available, else fallback
+  // Fallback: reveal everything after 2s in case observer fails
+  var fallbackTimer = setTimeout(function () {
+    targets.forEach(showEl);
+  }, 2000);
+
   if ('IntersectionObserver' in window) {
     var obs = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          showEl(entry.target);
           obs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
     targets.forEach(function (el) { obs.observe(el); });
   } else {
-    // Fallback: just show everything
-    targets.forEach(function (el) { el.classList.add('visible'); });
+    // No IntersectionObserver — just reveal all immediately
+    clearTimeout(fallbackTimer);
+    targets.forEach(showEl);
   }
 
-  // Run once on load for anything already visible
-  targets.forEach(checkEl);
+  // Also immediately reveal anything already scrolled into view
+  targets.forEach(function (el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.95) {
+      showEl(el);
+    }
+  });
 })();
 
 
@@ -355,7 +362,7 @@ function closeMobileMenu() {
 
 
 /* ─────────────────────────────────────────────
-   CONTACT FORM
+   CONTACT FORM — Formspree
 ───────────────────────────────────────────── */
 (function () {
   var form    = document.getElementById('contact-form');
@@ -369,14 +376,31 @@ function closeMobileMenu() {
     btn.textContent = 'Sending…';
     btn.disabled    = true;
 
-    setTimeout(function () {
-      form.reset();
+    var data = new FormData(form);
+
+    fetch(form.action, {
+      method:  'POST',
+      body:    data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (res) {
+      if (res.ok) {
+        form.reset();
+        success.textContent = "Message sent — I'll be in touch soon.";
+        success.classList.add('show');
+        setTimeout(function () { success.classList.remove('show'); }, 5000);
+      } else {
+        success.textContent = 'Something went wrong. Try emailing me directly.';
+        success.classList.add('show');
+      }
+    })
+    .catch(function () {
+      success.textContent = 'Network error. Try emailing me directly.';
+      success.classList.add('show');
+    })
+    .finally(function () {
       btn.textContent = 'Send Message';
       btn.disabled    = false;
-      success.classList.add('show');
-      setTimeout(function () {
-        success.classList.remove('show');
-      }, 4000);
-    }, 1000);
+    });
   });
 })();
