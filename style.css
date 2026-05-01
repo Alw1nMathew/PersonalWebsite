@@ -744,37 +744,34 @@ section { min-height: 100vh; position: relative; }
   resize: vertical;
 }
 
-.form-success,
 [data-fs-success] {
+  display: none;
   font-size: 0.85rem;
   color: var(--gold);
   padding: 0.7rem 1rem;
   border: 0.5px solid rgba(201, 168, 76, 0.4);
   background: rgba(201, 168, 76, 0.06);
-  display: none;
-  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
-.form-error,
-[data-fs-error]:not(:empty) {
-  font-size: 0.78rem;
-  color: #e87070;
-  margin-top: 0.2rem;
+[data-fs-success]:not(:empty) {
   display: block;
 }
 
-/* Formspree shows [data-fs-success] and [data-fs-error] when needed */
-[data-fs-success]:not(:empty),
-[data-fs-error]:not(:empty) { display: block; }
+[data-fs-error]:not([data-fs-error=""]):not(:empty) {
+  display: block;
+  font-size: 0.78rem;
+  color: #e87070;
+  margin-top: 0.25rem;
+}
 
 .field-error {
   font-size: 0.75rem;
   color: #e87070;
-  min-height: 1rem;
+  min-height: 0;
   display: block;
 }
 
-/* Input invalid state (set by data-fs-field) */
 .form-input[aria-invalid="true"],
 .form-textarea[aria-invalid="true"] {
   border-color: #e87070;
