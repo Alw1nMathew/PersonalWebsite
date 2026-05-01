@@ -218,10 +218,6 @@
 
       <div class="contact-grid">
 
-        <!-- Formspree status messages -->
-        <div class="form-success" data-fs-success>Message sent — I'll be in touch soon. ✦</div>
-        <div class="form-error"   data-fs-error></div>
-
         <form class="contact-form reveal" id="contact-form">
           <div class="form-field">
             <label class="form-label" for="inp-name">Your name</label>
@@ -239,6 +235,9 @@
             <span class="field-error" data-fs-error="message"></span>
           </div>
           <button type="submit" class="btn-primary" data-fs-submit-btn>Send Message</button>
+          <!-- Formspree populates these after submission — must stay empty -->
+          <div data-fs-success></div>
+          <div data-fs-error></div>
         </form>
 
         <!-- Formspree Ajax SDK -->
