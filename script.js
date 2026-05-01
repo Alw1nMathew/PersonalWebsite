@@ -361,46 +361,4 @@ function closeMobileMenu() {
 })();
 
 
-/* ─────────────────────────────────────────────
-   CONTACT FORM — Formspree
-───────────────────────────────────────────── */
-(function () {
-  var form    = document.getElementById('contact-form');
-  var success = document.getElementById('form-success');
-  var btn     = document.getElementById('form-btn');
-  if (!form || !success || !btn) return;
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    btn.textContent = 'Sending…';
-    btn.disabled    = true;
-
-    var data = new FormData(form);
-
-    fetch(form.action, {
-      method:  'POST',
-      body:    data,
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(function (res) {
-      if (res.ok) {
-        form.reset();
-        success.textContent = "Message sent — I'll be in touch soon.";
-        success.classList.add('show');
-        setTimeout(function () { success.classList.remove('show'); }, 5000);
-      } else {
-        success.textContent = 'Something went wrong. Try emailing me directly.';
-        success.classList.add('show');
-      }
-    })
-    .catch(function () {
-      success.textContent = 'Network error. Try emailing me directly.';
-      success.classList.add('show');
-    })
-    .finally(function () {
-      btn.textContent = 'Send Message';
-      btn.disabled    = false;
-    });
-  });
-})();
+/* Contact form is handled by @formspree/ajax CDN library in index.html */
