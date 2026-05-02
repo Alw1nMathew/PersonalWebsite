@@ -70,7 +70,7 @@ img, svg { display: block; }
   height: var(--nav-h);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 0 3rem;
   background: rgba(13, 13, 34, 0.7);
   backdrop-filter: blur(16px);
