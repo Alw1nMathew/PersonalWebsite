@@ -16,14 +16,12 @@
 
   <!-- ── Nav ── -->
   <nav id="navbar" style="justify-content:flex-end">
-
     <ul class="nav-links">
       <li><a href="#home"     class="nav-link active">Home</a></li>
       <li><a href="#about"    class="nav-link">About</a></li>
       <li><a href="#projects" class="nav-link">Projects</a></li>
       <li><a href="#contact"  class="nav-link">Contact</a></li>
     </ul>
-
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -47,62 +45,51 @@
     <div class="thread-dot" id="dot-contact"  data-label="Contact"></div>
   </div>
 
-  <!-- ══════════ HOME ══════════ -->
+  <!-- HOME -->
   <section id="home">
     <canvas id="particle-canvas"></canvas>
-
     <div class="home-content">
       <p class="eyebrow reveal">NYU Abu Dhabi</p>
-
       <h1 class="home-name reveal" style="transition-delay:0.1s">
         Alwin<br>Mathew
       </h1>
-
       <p class="home-role reveal" style="transition-delay:0.2s">Developer &amp; Designer</p>
-
       <p class="home-desc reveal" style="transition-delay:0.3s">
         Focused on building websites and digital experiences that are clean, creative and purposeful.
       </p>
-
       <div class="home-btns reveal" style="transition-delay:0.4s">
         <a href="#projects" class="btn-primary">View Work</a>
         <a href="#contact"  class="btn-outline">Get in Touch</a>
       </div>
     </div>
-
     <div class="scroll-hint" id="scroll-hint">
       <div class="scroll-line"></div>
       <span>Scroll</span>
     </div>
   </section>
 
-  <!-- ══════════ ABOUT ══════════ -->
+  <!-- ABOUT -->
   <section id="about">
     <div class="section-inner">
-
       <p class="section-eyebrow reveal">02 — About Me</p>
       <h2 class="section-title reveal">Hi, I'm Alwin</h2>
-
       <div class="about-grid">
         <div class="reveal-left">
           <div class="about-photo">
             <img src="Assets/alwinnew.png" alt="Alwin Mathew" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
           </div>
         </div>
-
         <div class="about-text">
           <p class="about-bio reveal">
-            I am a student studying Interactive Media and Computer Science at NYU Abu Dhabi, 
-            passionate about creating digital experiences that sit at the intersection of 
+            I am a student studying Interactive Media and Computer Science at NYU Abu Dhabi,
+            passionate about creating digital experiences that sit at the intersection of
             design and technology.
           </p>
-          <p class="about-bio reveal" style="transition-delay: 0.12s">
-            My research interests lie in computational modeling and cybersecurity, 
-            and I enjoy exploring how these fields intersect with interactive design 
+          <p class="about-bio reveal" style="transition-delay:0.12s">
+            My research interests lie in computational modeling and cybersecurity,
+            and I enjoy exploring how these fields intersect with interactive design
             to build experiences that are not only engaging but also intelligent and secure.
           </p>
-          </p>
-
           <p class="skills-label reveal" style="transition-delay:0.2s">Skills &amp; Tools</p>
           <div class="skills-grid reveal" style="transition-delay:0.28s">
             <span class="skill-chip">HTML</span>
@@ -110,24 +97,21 @@
             <span class="skill-chip">JavaScript</span>
             <span class="skill-chip">C++</span>
             <span class="skill-chip">Assembly</span>
-            <span class="skill-chip">Python</span
+            <span class="skill-chip">Python</span>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ══════════ PROJECTS ══════════ -->
+  <!-- PROJECTS -->
   <section id="projects">
     <div class="section-inner">
-
       <p class="section-eyebrow reveal">03 — Projects</p>
       <h2 class="section-title reveal">My Works so far</h2>
-
       <div class="projects-grid">
 
-        <a href="#" class="project-card reveal" style="transition-delay:0.05s">
+        <a href="https://alw1nmathew.github.io/nyuad-fitness-site/" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay:0.05s">
           <span class="card-badge">Assignment 01</span>
           <div class="project-thumb">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -136,16 +120,17 @@
             </svg>
           </div>
           <div class="card-body">
-            <h3 class="project-title">Assignment 1 Title</h3>
-            <p class="project-desc">Replace with your first Comm Lab assignment description. What did you make and explore?</p>
+            <h3 class="project-title">NYUAD Fitness Center</h3>
+            <p class="project-desc">A promotional website for the NYUAD gym, featuring video tours of both the Mixed and Women's Only gym facilities.</p>
             <div class="project-tags">
               <span class="tag">HTML</span>
               <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
             </div>
           </div>
         </a>
 
-        <a href="#" class="project-card reveal" style="transition-delay:0.1s">
+        <a href="https://rabeyamily.github.io/Comic_CommsLab/" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay:0.1s">
           <span class="card-badge">Assignment 02</span>
           <div class="project-thumb">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -154,16 +139,17 @@
             </svg>
           </div>
           <div class="card-body">
-            <h3 class="project-title">Assignment 2 Title</h3>
-            <p class="project-desc">Replace with your second Comm Lab assignment description. What did you make and explore?</p>
+            <h3 class="project-title">Don Midori vs Don Taichi</h3>
+            <p class="project-desc">An interactive digital comic about NYUAD's campus cats reimagined as rival mafia bosses in a noir-style turf war.</p>
             <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
               <span class="tag">JavaScript</span>
-              <span class="tag">p5.js</span>
             </div>
           </div>
         </a>
 
-        <a href="#" class="project-card reveal" style="transition-delay:0.15s">
+        <a href="https://rabeyamily.github.io/Sound_CommLab/" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay:0.15s">
           <span class="card-badge">Assignment 03</span>
           <div class="project-thumb">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -171,16 +157,17 @@
             </svg>
           </div>
           <div class="card-body">
-            <h3 class="project-title">Assignment 3 Title</h3>
-            <p class="project-desc">Replace with your third Comm Lab assignment description. What did you make and explore?</p>
+            <h3 class="project-title">Sound Guardian</h3>
+            <p class="project-desc">A web-based audio game where players choose between harmonious and chaotic sounds to defeat an ancient sound demon.</p>
             <div class="project-tags">
-              <span class="tag">React</span>
+              <span class="tag">HTML</span>
               <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
             </div>
           </div>
         </a>
 
-        <a href="#" class="project-card reveal" style="transition-delay:0.2s">
+        <a href="https://alw1nmathew.github.io/VideoCommsLab/" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay:0.2s">
           <span class="card-badge">Assignment 04</span>
           <div class="project-thumb">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -189,11 +176,12 @@
             </svg>
           </div>
           <div class="card-body">
-            <h3 class="project-title">Assignment 4 Title</h3>
-            <p class="project-desc">Replace with your fourth Comm Lab assignment description. What did you make and explore?</p>
+            <h3 class="project-title">The Brew Lab</h3>
+            <p class="project-desc">An interactive cafe-themed educational website where users make decisions at key stages of preparing cafe menu items.</p>
             <div class="project-tags">
-              <span class="tag">Node.js</span>
-              <span class="tag">API</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
             </div>
           </div>
         </a>
@@ -202,24 +190,22 @@
     </div>
   </section>
 
-  <!-- ══════════ CONTACT ══════════ -->
+  <!-- CONTACT -->
   <section id="contact">
     <div class="section-inner">
-
       <p class="section-eyebrow reveal">04 — Contact</p>
       <h2 class="section-title reveal">Let's Talk</h2>
-
       <div class="contact-grid">
 
         <form class="contact-form reveal" id="contact-form">
           <div class="form-field">
             <label class="form-label" for="inp-name">Your name</label>
-            <input  class="form-input" id="inp-name"  type="text"  name="name"    placeholder="Alwin Mathew"        data-fs-field required />
+            <input class="form-input" id="inp-name" type="text" name="name" placeholder="Alwin Mathew" data-fs-field required />
             <span class="field-error" data-fs-error="name"></span>
           </div>
           <div class="form-field">
             <label class="form-label" for="inp-email">Email address</label>
-            <input  class="form-input" id="inp-email" type="email" name="email"   placeholder="hello@example.com"   data-fs-field required />
+            <input class="form-input" id="inp-email" type="email" name="email" placeholder="hello@example.com" data-fs-field required />
             <span class="field-error" data-fs-error="email"></span>
           </div>
           <div class="form-field">
@@ -228,12 +214,10 @@
             <span class="field-error" data-fs-error="message"></span>
           </div>
           <button type="submit" class="btn-primary" data-fs-submit-btn>Send Message</button>
-          <!-- Formspree populates these after submission — must stay empty -->
           <div data-fs-success></div>
           <div data-fs-error></div>
         </form>
 
-        <!-- Formspree Ajax SDK -->
         <script>
           window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
           formspree('initForm', { formElement: '#contact-form', formId: 'xdabovnw' });
@@ -243,7 +227,6 @@
         <div class="contact-info reveal" style="transition-delay:0.15s">
           <p class="info-label">Direct email</p>
           <a href="mailto:aim9145@nyu.edu" class="contact-email">aim9145@nyu.edu</a>
-
           <p class="info-label">Find me on</p>
           <div class="socials-grid">
             <a href="https://www.linkedin.com/in/alwin-mathew-13b6b9327/" target="_blank" rel="noopener" class="social-link">LinkedIn</a>
@@ -257,7 +240,7 @@
     </div>
   </section>
 
-  <!-- ── Footer ── -->
+  <!-- Footer -->
   <footer>
     <p class="footer-copy">© 2026 <span>Alwin Mathew</span> — NYU Abu Dhabi</p>
   </footer>
