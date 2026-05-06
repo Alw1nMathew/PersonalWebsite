@@ -412,6 +412,9 @@ section { min-height: 100vh; position: relative; }
   z-index: 2;
   padding: calc(var(--nav-h) + 3rem) 3rem 5rem 3rem;
   max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .eyebrow {
@@ -448,7 +451,7 @@ section { min-height: 100vh; position: relative; }
   line-height: 1.75;
   color: var(--muted);
   max-width: 440px;
-  margin-bottom: 2.5rem;
+  margin: 0 auto 2.5rem auto;
   font-weight: 300;
 }
 
@@ -456,6 +459,7 @@ section { min-height: 100vh; position: relative; }
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Scroll hint */
@@ -689,7 +693,26 @@ section { min-height: 100vh; position: relative; }
 /* =============================================
    CONTACT
 ============================================= */
-#contact { background: var(--mid); }
+#contact {
+  background: var(--mid);
+  position: relative;
+}
+
+/* Subtle dot-grid texture overlay */
+#contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(201,168,76,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#contact .section-inner {
+  position: relative;
+  z-index: 1;
+}
 
 .contact-grid {
   display: grid;
@@ -808,22 +831,50 @@ section { min-height: 100vh; position: relative; }
   gap: 0.6rem;
 }
 
-.social-link {
-  display: block;
-  text-align: center;
-  padding: 0.72rem 0.5rem;
+.social-card-big {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   background: var(--card);
   border: 0.5px solid var(--border);
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
-  color: var(--cream);
+  padding: 0.8rem 1rem;
   text-decoration: none;
-  transition: border-color 0.3s, color 0.3s;
+  color: var(--cream);
+  transition: border-color 0.3s, transform 0.2s;
 }
 
-.social-link:hover {
+.social-card-big:hover {
   border-color: var(--gold);
-  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.social-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+
+.social-card-big:hover .social-icon-wrap {
+  background: rgba(201, 168, 76, 0.15);
+}
+
+.social-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+}
+
+.social-handle {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 1px;
 }
 
 /* =============================================
