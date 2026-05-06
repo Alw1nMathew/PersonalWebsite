@@ -19,7 +19,7 @@
   --gold:    #C9A84C;
   --gold-lt: #E8C96A;
   --cream:   #F5F2E8;
-  --muted:   #D8D6EC;
+  --muted:   #E8E6F5;
   --bg:      #0D0D22;
   --nav-h:   62px;
   --font-d:  'Cormorant Garamond', Georgia, serif;
@@ -438,8 +438,8 @@ section { min-height: 100vh; position: relative; }
 }
 
 .home-role {
-  font-size: 0.95rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
@@ -447,12 +447,12 @@ section { min-height: 100vh; position: relative; }
 }
 
 .home-desc {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.75;
   color: var(--muted);
   max-width: 440px;
   margin: 0 auto 2.5rem auto;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .home-btns {
@@ -537,11 +537,11 @@ section { min-height: 100vh; position: relative; }
 }
 
 .about-bio {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   color: var(--muted);
   margin-bottom: 1.25rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .about-bio strong {
@@ -668,10 +668,10 @@ section { min-height: 100vh; position: relative; }
 }
 
 .project-desc {
-  font-size: 0.92rem;
+  font-size: 0.98rem;
   line-height: 1.65;
   color: var(--muted);
-  font-weight: 300;
+  font-weight: 400;
   flex: 1;
 }
 
